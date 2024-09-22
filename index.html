@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Set the background color of the entire webpage */
+        body {
+            background-color: black; 
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            color: #7b7b7b;
+            text-align: center;
+        }
+        h2{
+            padding-top: 20px;
+            font-size: 16px;
+            color: #7b7b7b;
+            text-align: center; 
+        }
+        a {
+            width: 600px;
+            padding-left: 400px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #7b7b7b;
+            text-decoration: none;
+        }
+        ul {
+            list-style-type: none; /* Removes default list bullets */
+            padding: 0; /* Removes default padding from the list */
+        }
+    </style>
+</head>
+<body>
+    <h1>Impact of Subway Centrality on Manhattan Public High School Performance</h1>
+    <h2>CSUREMM, 2024</h2>
+    <ul>
+        <li><a href="summary.html">> Summary</a></li>
+        <li><a><br></a></li>
+        <li><a href="data_processing.html">> Data Processing</a></li>
+        <li><a><br></a></li>
+        <li><a href="centrality_graphs.html">> Centrality Graphs</a></li>
+        <li><a><br></a></li>
+        <li><a href="analysis.html">> Statistical Analysis</a></li>
+        <li><a><br></a></li>
+        <li><a href="final_report.html">> Final Report</a></li>
+    </ul>
+    <script>
+        // Get all expandable elements
+        var expandableElements = document.querySelectorAll('.expandable');
+
+        expandableElements.forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Get the next sibling element
+                var hiddenElement = this.nextElementSibling;
+
+                // Toggle display
+                if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                    hiddenElement.style.display = 'block';
+                } else {
+                    hiddenElement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
