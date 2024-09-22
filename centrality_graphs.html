@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black; 
+            font-family: 'Courier New', Courier, monospace;
+        }
+        p {
+            width: 600px; 
+            font-size: 14px;
+            padding-left: 420px;
+            padding-bottom: 10px;
+            text-align: justify;
+            color: #ffffff;
+        }   
+        h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+        h2 {
+            width: 700px; 
+            font-size: 16px;
+            margin-left: 350px;
+            font-weight: normal;
+            text-align: justify;
+            color: #ffffff;
+        }
+        h3 {
+            width: 600px;
+            padding-left: 400px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #ffffff;
+        }
+        .expandable {
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .hidden {
+            display: none;
+            color: #ffffff;
+        }
+        .underline {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Centrality Graphs</h1>
+</body>
+    <h3 class="expandable">> Closeness Centrality</h3>
+    <p class="hidden">
+            </p>
+    <h3 class="expandable">> Betweenness Centrality</h3>
+    <p class="hidden">
+            </p>
+    <h3 class="expandable">> Eigenvector Centrality</h3>
+    <p class="hidden">
+    </p>
+    <h3 class="expandable">> Node Degree Centrality</h3>
+    <p class="hidden">
+        <img src="file:///C:/Users/Kathy%20Xu/Downloads/node_degree_map.pdf" width="270" height="300">
+    </p>
+
+    <script>
+        // Get all expandable elements
+        var expandableElements = document.querySelectorAll('.expandable');
+
+        expandableElements.forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Get the next sibling element
+                var hiddenElement = this.nextElementSibling;
+
+                // Toggle display
+                if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                    hiddenElement.style.display = 'block';
+                } else {
+                    hiddenElement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</html>
