@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        p {
+            width: 600px; 
+            font-size: 14px;
+            padding-left: 420px;
+            padding-bottom: 10px;
+            text-align: justify;
+            color: #bbbbbb;
+        }   
+        h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            color: #bbbbbb;
+            text-align: center;
+        }
+        h2 {
+            width: 750px; 
+            font-size: 16px;
+            margin-left: 350px;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+            line-height: 1.5; 
+        }
+        h3 {
+            width: 600px;
+            padding-left: 350px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #bbbbbb;
+        }
+        .expandable {
+            cursor: pointer;
+            color: #bbbbbb;
+        }
+        .hidden {
+            display: none;
+            color: #bbbbbb;
+        }
+        .underline {
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Deliverables</h1>
+    <h2 class="expandable">1. Final Report, to be published in Columbia Undergraduate Math Journal:</h2>
+    <p class="hidden">
+        <img src="C:\Users\Kathy Xu\Downloads\closeness_map.png" width="600">
+    </p>
+    <h2 class="expandable">2. Research Posterboard, presented at Jane Street Math Day, Columbia University Pathways Programs Symposium, and Columbia Undergraduate Research Symposium:</h2>
+    <p class="hidden">
+        <img src="C:\Users\Kathy Xu\Downloads\betweenness_map.png" width="600">
+            </p>
+
+    <script>
+        // Get all expandable elements
+        var expandableElements = document.querySelectorAll('.expandable');
+
+        expandableElements.forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Get the next sibling element
+                var hiddenElement = this.nextElementSibling;
+
+                // Toggle display
+                if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                    hiddenElement.style.display = 'block';
+                } else {
+                    hiddenElement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</html>
