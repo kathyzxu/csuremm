@@ -19,10 +19,18 @@
             color: #bbbbbb;
         }
         h2{
-            padding-top: 40px;
-            font-size: 24px;
+            font-size: 16px;
             color: #bbbbbb;
-            text-align: center;
+            list-style-type: none; /* Removes default list bullets */
+            padding: 0;
+            cursor: pointer; /* Show pointer cursor for clickable headers */
+        }
+        h3 {
+            width: 600px;
+            padding-left: 350px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #bbbbbb;
         }
         a {
             width: 600px;
@@ -49,27 +57,41 @@
         .centered-heading img {
             margin-right: 10px; /* Add some space between the image and text */
         }
+        .hidden {
+            display: none; /* Start hidden content */
+        }
     </style>
 </head>
 <body>
     <h1 class="centered-heading"><img src="index/MTA_NYC_Logo_Black.png" height="40">
         Subway Centrality on Public High School Performance</h1>
-    <ul><br>
-        <li><a href="deliverables.html">> Project Deliverables</a></li>
+
+    <h2 class="expandable">> Deliverables</h2>
+    <div class="hidden">
+        <p><a href="deliverables/Subway_Centrality_Report.pdf"><h3>Report</h3></a></p>
+        <p><a href="deliverables/Subway_Centrality_Poster.pdf"><h3>Poster</h3></a></p>
+    </div>
+
+    <h2 class="expandable">> Summary</h2>
+    <div class="hidden">
+        <p><h3>hellooooo</h3></p>
+    </div>
+
+    <ul>
         <li><a href="data_processing.html">> Data Processing</a></li>
-        <li><a><br></a></li>
+        <li><br></li>
         <li><a href="centrality_graphs.html">> Centrality Graphs</a></li>
-        <li><a><br></a></li>
+        <li><br></li>
         <li><a href="analysis.html">> Statistical Analysis</a></li>
-        <li><a><br></a></li>
     </ul>
+
     <script>
         // Get all expandable elements
         var expandableElements = document.querySelectorAll('.expandable');
 
         expandableElements.forEach(function(element) {
             element.addEventListener('click', function() {
-                // Get the next sibling element
+                // Get the next sibling element (which should be the hidden content div)
                 var hiddenElement = this.nextElementSibling;
 
                 // Toggle display
@@ -83,4 +105,3 @@
     </script>
 </body>
 </html>
-    
