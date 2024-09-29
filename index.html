@@ -30,7 +30,7 @@
             padding-left: 240px;
             font-size: 16px;
             font-weight: normal;
-            width: 600px; 
+            width: 750px; 
             color: #bbbbbb;
             line-height: 1.5; 
         }
@@ -140,14 +140,15 @@
     let currentParagraph = 1;
     const totalParagraphs = 5;
 
-    document.getElementById("nextButton").addEventListener("click", function() {
+    document.getElementById("nextText").addEventListener("click", function() {
         if (currentParagraph < totalParagraphs) {
             currentParagraph++;
             document.getElementById(`para${currentParagraph}`).classList.remove("hidden");
         } else {
-            alert("All paragraphs are already revealed.");
+            document.getElementById("nextText").classList.add("hidden");
         }
     });
+</script>
     
     <script>
         // Get all expandable elements
