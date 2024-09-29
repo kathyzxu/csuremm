@@ -24,13 +24,13 @@
             list-style-type: none; /* Removes default list bullets */
             padding-left: 200px;
             cursor: pointer;
-            width: 600px; 
             font-weight: normal;/* Show pointer cursor for clickable headers */
         }
         h3 {
             padding-left: 240px;
             font-size: 16px;
             font-weight: normal;
+            width: 600px; 
             color: #bbbbbb;
         }
         
@@ -78,32 +78,38 @@
     <h2><br></h2>
     <h2 class="expandable">> Project Overview</h2>
         <div class="hidden">
-        <h3>
-            The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
-            US and serves more than 3 million riders daily. This project explores the impact of the public transit on public 
-            high school performance throughout Manhattan, with the hypothesis that schools that are more central to the subway 
-            system tend to perform better academically. <br><br>
-            Prior research has applied graph theory to analyze public transit systems. Building upon these techniques, I worked 
-            with my friends Caroline Smyth and Sandra Zelen to model the MTA subway system as a graph, treating each station as a 
-            node and the subway lines connecting adjacent stations as edges. Key to generating our graph was the MTA Subway Stations 
-            dataset (https://catalog.data.gov/dataset/mta-subway-stations), which provided the locations and other identifying information 
-            of every subway stop in the MTA network. <br><br>
-            Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
-            closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
-            about the relative connectivity of each subway stop to the remainder of the system, so we decided it was important to factor 
-            each measure into our model. <br><br>
-            We obtained location data and performance metrics of all Manhattan public high schools from the New York Department of Education. 
-            With the aid of Google Maps API, we mapped each school to its nearest station as a proxy for the school’s centrality and related these
-            centrality measures to the school’s performance metrics through a series of predictive and explanatory statistical techniques: <br><br> 
-            We first used multiple linear regression to regress each school's performance metrics on all four centrality measures. However, these models 
-            yielded low R-squared values, prompting us to turn to principal component analysis (PCA). PCA generated three principal components (PCs), 
-            loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
-            centrality, and school performance. After plotting each centrality PC against the school performance PC, we identified three clusters of 
-            Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance. The dominant 
-            performance metrics driving each cluster revealed that low centrality-high performance schools were primarily driven by student achievement, 
-            low centrality-low performance by strong family-community ties, and high centrality-medium performance by rigorous instruction. Surprisingly, 
-            clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.
-        </h3>
+            <h3 id="para1">
+                The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
+                US and serves more than 3 million riders daily. This project explores the impact of the public transit on public 
+                high school performance throughout Manhattan, with the hypothesis that schools that are more central to the subway 
+                system tend to perform better academically. 
+            </h3>
+            
+            <h3 id="para2" class="hidden">
+                Prior research has applied graph theory to analyze public transit systems. Building upon these techniques, I worked 
+                with my friends Caroline Smyth and Sandra Zelen to model the MTA subway system as a graph, treating each station as a 
+                node and the subway lines connecting adjacent stations as edges. Key to generating our graph was the MTA Subway Stations 
+                dataset, which provided the locations and other identifying information of every subway stop in the MTA network. 
+            </h3>
+        
+            <h3 id="para3" class="hidden">
+                Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
+                closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
+                about the relative connectivity of each subway stop to the remainder of the system, so we decided it was important to factor 
+                each measure into our model. 
+            </h3>
+        
+            <h3 id="para4" class="hidden">
+                We obtained location data and performance metrics of all Manhattan public high schools from the New York Department of Education. 
+                With the aid of Google Maps API, we mapped each school to its nearest station as a proxy for the school’s centrality and related these
+                centrality measures to the school’s performance metrics through a series of predictive and explanatory statistical techniques.
+            </h3>
+        
+            <h3 id="para5" class="hidden">
+                We first used multiple linear regression to regress each school's performance metrics on all four centrality measures. However, these models 
+                yielded low R-squared values, prompting us to turn to principal component analysis (PCA). PCA generated three principal components (PCs), 
+                loaded on by different combinations of centrality measures and performance metrics.
+            </h3>
     </div>
     
     <h2 class="expandable">> Deliverables</h2>
