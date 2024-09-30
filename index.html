@@ -102,8 +102,7 @@
     <h1 class="centered-heading"><img src="index/MTA_NYC_Logo_Black.png" height="40">
         Subway Centrality on Public High School Performance</h1>
     <h2><br></h2>
-    
-<h2 class="expandable">> Project Overview</h2>
+    <h2 class="expandable">Project Overview</h2>
 <div class="hidden">
     <h3>
         The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
@@ -112,16 +111,16 @@
         system tend to perform better academically. 
     </h3>
 
-    <h4 class="expandable"><em>continue reading >></em> </h4>
+    <h4 class="expandable continue">continue reading >></h4>
     <div class="hidden">
         <h3>
             Prior research has applied graph theory to analyze public transit systems. Building upon these techniques, I worked 
             with my friends Caroline Smyth and Sandra Zelen to model the MTA subway system as a graph, treating each station as a 
             node and the subway lines connecting adjacent stations as edges. Key to generating our graph was the MTA Subway Stations 
             dataset, which provided the locations and other identifying information of every subway stop in the MTA network. 
-        </h3>
+          </h3>
         
-        <h4 class="expandable"><em>continue reading >></em> </h4>
+        <h4 class="expandable continue">continue reading >></h4>
         <div class="hidden">
             <h3>
                 Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
@@ -131,11 +130,11 @@
                 from the Department of Education. With the aid of Google Maps API, we mapped each school to its nearest station as a proxy for 
                 the school’s centrality and related these centrality measures to the school’s performance metrics through a series of predictive 
                 and explanatory statistical techniques.
-                </h3>
+            </h3>
 
-                <h4 class="expandable"><em>continue reading >></em> </h4>
-                <div class="hidden">
-                    <h3>
+            <h4 class="expandable continue">continue reading >></h4>
+            <div class="hidden">
+                <h3>
                     We first used multiple linear regression to regress each school's performance metrics on all four centrality measures. However, these models 
                     yielded low R-squared values, prompting us to turn to principal component analysis (PCA). PCA generated three principal components (PCs), 
                     loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
@@ -148,6 +147,8 @@
         </div>
     </div>
 </div>
+
+
     
     <h2 class="expandable">> Deliverables</h2>
     <div class="hidden">
@@ -170,6 +171,18 @@
 <footer>
   <p>HTML site by Kathy Xu, 2024</p>
 </footer>
+    
+    <script>
+    document.querySelectorAll('.continue').forEach(item => {
+        item.addEventListener('click', event => {
+            const nextDiv = item.nextElementSibling;
+            if (nextDiv && nextDiv.classList.contains('hidden')) {
+                nextDiv.classList.remove('hidden');
+                item.style.display = 'none'; // Hide the "continue reading" text
+            }
+        });
+    });
+</script>
     
     <script>
         // Get all expandable elements
