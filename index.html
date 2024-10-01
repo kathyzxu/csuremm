@@ -122,7 +122,7 @@
             Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
                 closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
                 about the relative connectivity of each subway stop to the remainder of the system, so we decided it was important to factor 
-                each measure into our model. 
+                all measures into our model. 
           </h3>
         
        <h4 class="expandable continue"><i>continue reading</i></h4>
@@ -137,14 +137,22 @@
             <h4 class="expandable continue"><i>continue reading</i></h4>
             <div class="hidden">
                 <h3>
-                    We first used multiple linear regression to regress each school's performance metrics on all four centrality measures. However, these models 
-                    yielded low R-squared values, prompting us to turn to principal component analysis (PCA). PCA generated three principal components (PCs), 
+                    We used principal component analysis (PCA), a machine-learning dimensionality reduction technique, to model our results.
+                    PCA generated three principal components (PCs), 
                     loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
                     centrality, and school performance. After plotting each centrality PC against the school performance PC, we identified three clusters of 
                     Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance. 
-                    <br><br>The dominant performance metrics driving each cluster revealed that <strong>low centrality-high performance schools were primarily driven by student achievement, 
-                    low centrality-low performance by strong family-community ties, and high centrality-medium performance by rigorous instruction</strong>. Surprisingly,                         clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.
                 </h3>
+                
+                       <h4 class="expandable continue"><i>continue reading</i></h4>
+        <div class="hidden">
+            <h3>
+               We found that the dominant performance metrics driving each cluster revealed that <strong>low centrality-high performance schools were primarily driven by student achievement, 
+                    low centrality-low performance by strong family-community ties, and high centrality-medium performance by rigorous instruction</strong>. Surprisingly,                         
+                    clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.
+
+            </h3>
+               </div>  
             </div>
         </div>
     </div>
