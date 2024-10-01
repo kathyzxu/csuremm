@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Analysis</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        p {
+            width: 600px; 
+            font-size: 14px;
+            margin: 0 auto; /* Centers the paragraph */
+            padding-bottom: 10px;
+            text-align: justify;
+            color: #bbbbbb;
+        }   
+        h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            color: #bbbbbb;
+            text-align: center;
+        }
+        h2 {
+            width: 1000px; 
+            font-size: 18px;
+            margin: 0 auto; /* Centers the heading */
+            font-weight: bold;
+            text-align: center;
+            color: #bbbbbb;
+        }
+        h3 {
+            width: 900px; 
+            font-size: 16px;
+            margin-left: 250px;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+            line-height: 1.5; 
+        }
+        h4 {
+            width: 860px; 
+            font-size: 16px;
+            margin-left: 290px;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+        }
+        h5 {
+            width: 900px; 
+            font-size: 16px;
+            margin-left: 470px;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+        }
+        a {
+            color: #bbbbbb;
+        }
+        .expandable {
+            cursor: pointer;
+            color: #bbbbbb;
+        }
+        .hidden {
+            display: none;
+            color: #bbbbbb;
+        }
+        .underline {
+            text-decoration: underline; 
+            color: #bbbbbb;
+        }
+        table {
+            border-collapse: collapse;
+           /* margin: 20px auto;  Centers the table */
+            color: #bbbbbb;
+        }
+        .widetable {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #bbbbbb;
+            padding: 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #000000;
+            text-align: left;
+        }
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+        .link {
+              text-decoration: underline; /* Adjust the number for more or less indent */
+        }
+    </style>
+</head>
+<body>
+    <h1>Principal Component Analysis</h1>
+    <h3>Due to our large number of independent variables, many of which were interrelated, we turned to dimensionality reduction methods for our analysis. 
+        Results were primarily obtained through <b>principal component analysis</b> (more information about PCA <i><a href="https://www.ibm.com/topics/principal-component-analysis">here</a></i>).
+        <br><br>
+        We identified three main PCs, which comprised 88% of our data's variance:
+    </h3>
+
+    <h4 class="expandable"><i>1. Neighbor-Driven Centrality</i></h4>
+    <h5 class="hidden"><img src="C:\Users\Kathy Xu\Downloads\pca.png" height="450"></h5>
+
+    <h4 class="expandable"><i>2. School Performance</i></h4>
+    <h5 class="hidden"><img src="C:\Users\Kathy Xu\Downloads\pca.png" height="450"></h5>
+
+    <h4 class="expandable"><i>3. Distance-Driven Centrality</i></h4>
+    <h5 class="hidden"><img src="C:\Users\Kathy Xu\Downloads\pca.png" height="450"></h5>
+
+    <h3>Numeric values for variable loadings of each PC are summarized in this <i class="expandable">table</i>.</h3>
+
+    <div class="hidden" id="loading-table">
+        <div class="table-container">
+        <table style="margin-left: 350px;">
+            <tr>
+                <th>Variable</th>
+                <th>Neighbor-Driven</th>
+                <th>Performance</th>
+                <th>Distance-Driven</th>
+            </tr>
+            <tr>
+                <td>Node Degree Centrality</td>
+                <td>0.532</td>
+                <td>0.019</td>
+                <td>-0.192</td>
+            </tr>
+            <tr>
+                <td>Closeness Centrality</td>
+                <td>0.162</td>
+                <td>0.044</td>
+                <td>0.61</td>
+            </tr>
+            <tr>
+                <td>Betweenness Centrality</td>
+                <td>0.57</td>
+                <td>-0.056</td>
+                <td>-0.529</td>
+            </tr>
+            <tr>
+                <td>Eigenvector Centrality</td>
+                <td>0.602</td>
+                <td>0.085</td>
+                <td>0.486</td>
+            </tr>
+            <tr>
+                <td>Student Achievement</td>
+                <td>0.002</td>
+                <td>0.277</td>
+                <td>0.076</td>
+            </tr>
+            <tr>
+                <td>Rigorous Instruction</td>
+                <td>-0.002</td>
+                <td>0.521</td>
+                <td>0.071</td>
+            </tr>
+            <tr>
+                <td>Collaborative Teachers</td>
+                <td>-0.019</td>
+                <td>0.43</td>
+                <td>-0.009</td>
+            </tr>
+            <tr>
+                <td>Supportive Environment</td>
+                <td>-0.008</td>
+                <td>0.31</td>
+                <td>-0.001</td>
+            </tr>
+            <tr>
+                <td>Effective School Leadership</td>
+                <td>-0.01</td>
+                <td>0.39</td>
+                <td>-0.152</td>
+            </tr>
+            <tr>
+                <td>Strong Family Community Ties</td>
+                <td>-0.051</td>
+                <td>0.263</td>
+                <td>-0.153</td>
+            </tr>
+            <tr>
+                <td>Trust</td>
+                <td>-0.022</td>
+                <td>0.369</td>
+                <td>-0.131</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--   <h2>School Groupings Obtained by K-Means Clustering</h2>
+
+    <div style="text-align: center;">
+        <img src="C:\Users\Kathy Xu\Downloads\distance_driven.png" height="400">
+        <img src="C:\Users\Kathy Xu\Downloads\neighbor_driven.png" height="400">
+    </div>
+
+    <div class="widetable">
+        <table>
+            <tr>
+                <th>Cluster</th>
+                <th>PC</th>
+                <th>Centrality</th>
+                <th>Performance</th>
+                <th>Dominant Performance Metric</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Neighbor-driven</td>
+                <td>High</td>
+                <td>Med</td>
+                <td>Rigorous Instruction</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Neighbor-driven</td>
+                <td>Low</td>
+                <td>Low</td>
+                <td>Strong Family-Community Ties</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Neighbor-driven</td>
+                <td>Low</td>
+                <td>High</td>
+                <td>Student Achievement</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="widetable">
+        <table>
+            <tr>
+                <th>Cluster</th>
+                <th>PC</th>
+                <th>Centrality</th>
+                <th>Performance</th>
+                <th>Dominant Performance Metric</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Distance-driven</td>
+                <td>High</td>
+                <td>Med</td>
+                <td>Rigorous Instruction, Student Achievement</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Distance-driven</td>
+                <td>Low</td>
+                <td>Low</td>
+                <td>Strong Family-Community Ties</td>
+            </tr>--> 
+
+            <script>
+                // Get all expandable elements
+                var expandableElements = document.querySelectorAll('.expandable');
+        
+                expandableElements.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        // Get the next sibling element
+                        var hiddenElement = this.nextElementSibling;
+        
+                        // Toggle display
+                        if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                            hiddenElement.style.display = 'block';
+                        } else {
+                            hiddenElement.style.display = 'none';
+                        }
+                    });
+                });
+            </script>
+
+<script>
+    // Get all expandable elements
+    var expandableElements = document.querySelectorAll('.expandable');
+
+    expandableElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Get the table or next sibling element
+            var hiddenElement = document.getElementById('loading-table');
+
+            // Toggle display
+            if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                hiddenElement.style.display = 'block';
+            } else {
+                hiddenElement.style.display = 'none';
+            }
+        });
+    });
+</script>
+        </html>
