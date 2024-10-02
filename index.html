@@ -112,7 +112,7 @@
         The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
         US and serves more than 3 million riders daily. This project explores the impact of subway centrality on public 
         high school performance throughout Manhattan, with the hypothesis that schools that are more central to the subway 
-        system tend to perform better academically. 
+        system tend to perform better academically. <br><br>
     </h3>
 
   <h4 class="expandable continue"><i>continue reading</i></h4>
@@ -124,14 +124,14 @@
             dataset, which provided the locations and other identifying information of every subway stop in the MTA network. 
             <br><br>
             Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
-                closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
-                about the relative connectivity of each subway stop to the remainder of the system, so we decided it was important to factor 
-                all measures into our model. <br><br>
+            closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
+            about the relative connectivity of each subway stop to the remainder of the system, so we decided it was important to factor 
+            all measures into our model. <br><br>
           </h3>
         
        <h4 class="expandable continue"><i>continue reading</i></h4>
         <div class="hidden">
-            <h3>
+            <h3><br>
                 Additionally, we obtained location data and performance metrics of all Manhattan public high schools 
                 from the Department of Education. With the aid of Google Maps API, we mapped each school to its nearest station as a proxy for 
                 the school’s centrality and related these centrality measures to the school’s performance metrics through a series of predictive 
@@ -140,20 +140,20 @@
                     
             <h4 class="expandable continue"><i>continue reading</i></h4>
             <div class="hidden">
-                <h3>
+                <h3><br>
                     We used principal component analysis (PCA), a machine-learning dimensionality reduction technique, to model our results.
                     PCA generated three principal components (PCs), 
                     loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
                     centrality, and school performance. After plotting each centrality PC against the school performance PC, we identified three clusters of 
-                    Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance. <br><br>
+                    Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance.
                 </h3>
                 
                        <h4 class="expandable continue"><i>continue reading</i></h4>
         <div class="hidden">
-            <h3>
+            <h3><br>
                We found that the dominant performance metrics driving each cluster revealed that <strong>low centrality-high performance schools were primarily driven by student achievement, 
                     low centrality-low performance by strong family-community ties, and high centrality-medium performance by rigorous instruction</strong>. Surprisingly,                         
-                    clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.<br><br>
+                    clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.
 
             </h3>
                </div>  
