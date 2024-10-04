@@ -8,71 +8,78 @@
         body {
             background-color: black; 
             font-family: monospace;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
         }
-        
         h1 {
             padding-top: 20px;
-            font-size: 2rem; /* Use responsive units */
+            font-size: 20px;
             display: flex; /* Use flexbox */
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
             text-align: center; /* Center text inside the flex container */
             color: #bbbbbb;
         }
-
-        h2 {
-            max-width: 90%; /* Limit width to 90% */
-            margin: 0 auto; /* Center horizontally */
-            font-size: 1.5rem; /* Use responsive units */
+        h2{
+            width: 920px; 
+            font-size: 16px;
             justify-content: center;
             font-weight: normal;
             text-align: justify;
             color: #bbbbbb;
-            line-height: 1.2; 
+            line-height: 1; 
+             margin: 0 auto;  
         }
 
-        h3, h4 {
-            max-width: 90%; /* Limit width to 90% */
-            margin: 0 auto; /* Center horizontally */
-            font-size: 1.2rem; /* Use responsive units */
+        
+        h3 {
+            width: 880px; 
+            font-size: 16px;
             justify-content: center;
             font-weight: normal;
             text-align: justify;
             color: #bbbbbb;
             line-height: 1.5; 
+             margin: 0 auto;  
+        }
+
+        h4 {
+            width: 880px; 
+            font-size: 16px;
+            justify-content: center;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+            line-height: 1.5; 
+             margin: 0 auto;  
         }
 
         footer {
-            background-color: black; 
-            text-align: center;
-            padding: 14px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+          background-color: black; 
+          text-align: center;
+          padding: 14px;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
         }
         
         footer p {
-            margin: 0;
-            font-size: 1rem; /* Use responsive units */
-            color: #bbbbbb;
+          margin: 0;
+          font-size: 12px;
+          color: #bbbbbb;
         }
         
         a {
             padding-left: 0px;
-            font-size: 1rem; /* Use responsive units */
+            font-size: 16px;
             color: #bbbbbb;
             text-decoration: none; /* Underline the links */
         }
-
         .link {
-            text-decoration: underline; /* Adjust the number for more or less indent */
+              text-decoration: underline; /* Adjust the number for more or less indent */
         }
-
+                
         .centered-heading {
             padding-top: 40px;
-            font-size: 2rem; /* Use responsive units */
+            font-size: 22px;
             display: flex; /* Use flexbox */
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
@@ -81,130 +88,131 @@
         }
         
         li {
-            list-style-type: none; /* Removes bullets */
-            padding-left: 0; /* Removes indentation */
-            margin: 0; /* Resets margins */
-        }
-
+    list-style-type: none; /* Removes bullets */
+    padding-left: 0; /* Removes indentation */
+    margin: 0; /* Resets margins */
+    }
         h2 a {
-            display: block; /* Make links behave like block elements */
-            color: inherit; /* Inherit the color from the h2 */
-            text-decoration: none; /* Remove underline */
-            padding-left: 0; /* Adjust indentation if necessary */
-        }
-
+    display: block; /* Make links behave like block elements */
+    color: inherit; /* Inherit the color from the h2 */
+    text-decoration: none; /* Remove underline */
+    padding-left: 0; /* Adjust indentation if necessary */
+}
+            
         .centered-heading img {
             margin-right: 10px; /* Add some space between the image and text */
         }
-        
         .hidden {
             display: none; /* Start hidden content */
-        }
-        
-        /* Responsive media query */
-        @media screen and (max-width: 768px) {
-            h1, h2, h3, h4, footer p {
-                font-size: 1.2rem; /* Adjust font size for smaller screens */
-            }
         }
     </style>
 </head>
 <body>
-    <h1 class="centered-heading">
-        <img src="index/MTA_NYC_Logo_Black.png" height="40">
-        Subway Centrality on Public High School Performance
-    </h1>
+    <h1 class="centered-heading"><img src="index/MTA_NYC_Logo_Black.png" height="40">
+        Subway Centrality on Public High School Performance</h1>
+    <h2><br></h2>
     
-    <h2 class="expandable">Project Overview</h2>
-    <div class="hidden">
-        <h3 style="margin-top: 5px;">
-            The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
-            US and serves more than 3 million riders daily. This project explores the impact of subway centrality on public 
-            high school performance throughout Manhattan, with the hypothesis that schools more central to the subway 
-            system tend to perform better academically. 
+<h2 class="expandable">Project Overview</h2>
+<div class="hidden"">
+    <h3 style="margin-top: 5px;">
+        The New York City Metropolitan Transit Authority (MTA) subway system is the largest transportation agency in the 
+        US and serves more than 3 million riders daily. This project explores the impact of subway centrality on public 
+        high school performance throughout Manhattan, with the hypothesis that schools more central to the subway 
+        system tend to perform better academically. 
+    </h3>
+        <h4 class="expandable continue"style="margin-top: 5px;"><i> continue >> <br></i></h4>
+    <div class="hidden" style="margin-top: 10px;">
+        <h3>
+            Prior research has applied graph theory to analyze public transit systems. Building upon these techniques, I worked 
+            with my friends Caroline Smyth and Sandra Zelen to model the MTA subway system as a graph, treating each station as a 
+            node and the subway lines connecting adjacent stations as edges. Key to generating our graph was the MTA Subway Stations 
+            dataset, which provided the locations and other identifying information of every subway stop in the MTA network. Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
+            closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
+            about the relative connectivity of each subway stop to the remainder of the system, so we factored all measures into our model.
+            
         </h3>
-        <h4 class="expandable continue" style="margin-top: 5px;">
-            <i> continue >> <br></i>
-        </h4>
+
+        <h4 class="expandable continue"style="margin-top: 5px;"><i> continue >> <br></i></h4>
         <div class="hidden" style="margin-top: 10px;">
             <h3>
-                Prior research has applied graph theory to analyze public transit systems. Building upon these techniques, I worked 
-                with my friends Caroline Smyth and Sandra Zelen to model the MTA subway system as a graph, treating each station as a 
-                node and the subway lines connecting adjacent stations as edges. Key to generating our graph was the MTA Subway Stations 
-                dataset, which provided the locations and other identifying information of every subway stop in the MTA network. Using the Python package NetworkX, we calculated the following measures of centrality for all stations: betweenness centrality,
-                closeness centrality, eigenvector centrality, and node degree centrality. Each centrality measure conveys different information
-                about the relative connectivity of each subway stop to the remainder of the system, so we factored all measures into our model.
-            </h3>
-
-            <h4 class="expandable continue" style="margin-top: 5px;">
-                <i> continue >> <br></i>
-            </h4>
-            <div class="hidden" style="margin-top: 10px;">
-                <h3>
-                    Additionally, we obtained location data and performance metrics of all Manhattan public high schools 
-                    from the Department of Education. With the aid of the Google Maps API, we mapped each school to its nearest station as a proxy for 
-                    the school’s centrality and related these centrality measures to the school’s performance metrics through a series of predictive 
-                    and explanatory statistical techniques.
+                Additionally, we obtained location data and performance metrics of all Manhattan public high schools 
+                from the Department of Education. With the aid of the Google Maps API, we mapped each school to its nearest station as a proxy for 
+                the school’s centrality and related these centrality measures to the school’s performance metrics through a series of predictive 
+                and explanatory statistical techniques.
                 </h3>
 
-                <h4 class="expandable continue" style="margin-top: 5px;">
-                    <i> continue >> <br></i>
-                </h4>
+                        <h4 class="expandable continue"style="margin-top: 5px;"><i> continue >> <br></i></h4>
                 <div class="hidden" style="margin-top: 10px;">
                     <h3>
                         We used principal component analysis (PCA), a machine-learning dimensionality reduction technique, to model our results.
-                        PCA generated three principal components (PCs), 
-                        loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
-                        centrality, and school performance. After plotting each centrality PC against the school performance PC, we identified three clusters of 
-                        Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance. The dominant 
+                    PCA generated three principal components (PCs), 
+                    loaded on by different combinations of centrality measures and performance metrics: neighbor-driven centrality, distance-driven 
+                    centrality, and school performance. After plotting each centrality PC against the school performance PC, we identified three clusters of 
+                    Manhattan schools: low centrality-high performance, low centrality-low performance, and high centrality-medium performance. The dominant 
                         performance metrics driving each cluster revealed that <strong>low centrality-high performance schools were primarily driven by student achievement, 
                         low centrality-low performance by strong family-community ties, and high centrality-medium performance by rigorous instruction</strong>. Surprisingly, 
                         clusters from both plots shared the same dominant performance metrics, despite being derived from different centrality PCs.
-                    </h3>
-                </div>
+                   </h3>
             </div>
         </div>
     </div>
+</div>
     
-    <h2 class="expandable"><br>Deliverables</h2>
-    <div class="hidden">
-        <h3>
-            <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-                <li style="margin-top: 5px;"><a href="deliverables/Subway Centrality Report.pdf"><i>> Report</i></a></li>
-                <li style="margin-top: 5px;"><a href="deliverables/Subway Centrality Poster.pdf"><i>> Poster</i></a></li>
-                <li style="margin-top: 5px;"><a href="https://github.com/sandrazelen/Impact-of-Subway-Station-Centrality-on-Manhattan-Public-High-School-Performance"><i>> GitHub</i></a></li>
-            </ul>
-        </h3>
-    </div>
-    
-    <h2>
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li><a href="centrality_graphs.html">Centrality Graphs</a></li>
-            <br>
-            <li><a href="pca.html">Principal Component Analysis</a></li>
-            <br>
-            <li><a href="clustering.html">School Clusters</a></li>
+<h2 class="expandable"><br>Deliverables</h2>
+<div class="hidden">
+    <h3>
+        <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+            <li style="margin-top: 5px;"><a href="deliverables/Subway Centrality Report.pdf"><i>> Report</i></a></li>
+            <li style="margin-top: 5px;"><a href="deliverables/Subway Centrality Poster.pdf"><i>> Poster</i></a></li>
+            <li style="margin-top: 5px;"><a href="https://github.com/sandrazelen/Impact-of-Subway-Station-Centrality-on-Manhattan-Public-High-School-Performance"><i>> GitHub</i></a></li>
         </ul>
-    </h2>
-    
+    </h3>
+</div>
+<h2>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li><a href="centrality_graphs.html">Centrality Graphs</a></li>
+        <br>
+        <li><a href="pca.html">Principal Component Analysis</a></li>
+        <br>
+        <li><a href="clustering.html">School Clusters</a></li>
+    </ul>
+</h2>
     <h3><br><br><br></h3>
     
-    <footer>
-        <p>HTML site by Kathy Xu, 2024</p>
-    </footer>
+<footer>
+  <p>HTML site by Kathy Xu, 2024</p>
+</footer>
     
     <script>
-        document.querySelectorAll('.continue').forEach(item => {
-            item.addEventListener('click', event => {
-                const nextDiv = item.nextElementSibling;
-                if (nextDiv && nextDiv.classList.contains('hidden')) {
-                    nextDiv.classList.remove('hidden');
-                    item.style.display = 'none'; // Hide the "continue reading" text
+    document.querySelectorAll('.continue').forEach(item => {
+        item.addEventListener('click', event => {
+            const nextDiv = item.nextElementSibling;
+            if (nextDiv && nextDiv.classList.contains('hidden')) {
+                nextDiv.classList.remove('hidden');
+                item.style.display = 'none'; // Hide the "continue reading" text
+            }
+        });
+    });
+</script>
+    
+    <script>
+        // Get all expandable elements
+        var expandableElements = document.querySelectorAll('.expandable');
+
+        expandableElements.forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Get the next sibling element (which should be the hidden content div)
+                var hiddenElement = this.nextElementSibling;
+
+                // Toggle display
+                if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                    hiddenElement.style.display = 'block';
+                } else {
+                    hiddenElement.style.display = 'none';
                 }
             });
         });
     </script>
     
-    <script>
-        // Get all expandable elements
-        var expandableElements = document.querySelectorAll('.expandable
+</body>
+</html>
