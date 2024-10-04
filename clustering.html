@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clustering</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        p {
+            width: 600px; 
+            font-size: 14px;
+            margin: 0 auto; /* Centers the paragraph */
+            padding-bottom: 10px;
+            text-align: justify;
+            color: #bbbbbb;
+        }   
+        h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            color: #bbbbbb;
+            text-align: center;
+        }
+        h2 {
+            width: 900px; 
+            font-size: 16px;
+            justify-content: center;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+            line-height: 1.5; 
+             margin: 0 auto;  
+        }
+        h3 {
+            width: 860px; 
+            font-size: 16px;
+            justify-content: center;
+            font-weight: normal;
+            text-align: justify;
+            color: #bbbbbb;
+            line-height: 1.5; 
+             margin: 0 auto;  
+        }
+        h4 {
+            width: 820px; 
+            font-size: 16px;
+            font-weight: normal;
+            color: #bbbbbb;
+            line-height: 1.5; 
+            margin: 0 auto;
+            display: flex;        /* Flexbox layout */
+            justify-content: center; /* Center the images inside the container */
+            gap: 10px;            /* Add some space between images */
+        }
+        h5 {
+            width: 900px; 
+            font-size: 16px;
+            justify-content: center;
+            font-weight: normal;
+            text-align: center;
+            color: #bbbbbb;
+        }
+        a {
+            color: #bbbbbb;
+        }
+        .expandable {
+            cursor: pointer;
+            color: #bbbbbb;
+        }
+        .hidden {
+            display: none;
+            color: #bbbbbb;
+        }
+        .underline {
+            text-decoration: underline; 
+            color: #bbbbbb;
+        }
+        table {
+            border-collapse: collapse;
+           /* margin: 20px auto;  Centers the table */
+            color: #bbbbbb;
+            font-size:16px
+        }
+        .widetable {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #bbbbbb;
+            padding: 4px;
+            text-align: left;
+        }
+        th {
+            background-color: #000000;
+            text-align: left;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        .link {
+              text-decoration: underline; /* Adjust the number for more or less indent */
+        }
+
+        footer {
+          background-color: black; 
+          text-align: center;
+          padding: 14px;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+        
+        footer p {
+          margin: 0;
+          font-size: 12px;
+          color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>School Clusters</h1>
+    <h2>After identifying the three predominant PCs driving our data, we created two scatter plots of the schools to further investigate centrality-performance PC relationships.
+        Next, we formed three clusters of schools that share similar centrality-performance qualities according to the k-means clustering algorithm (more information about 
+        k-means clustering <i><a href="https://www.geeksforgeeks.org/k-means-clustering-introduction/">here</a></i>).
+        <br>
+        </h2>
+
+    <h2 style = "margin-top:10px;">Click to expand:</h2>
+
+    <h3 class = "expandable" style = "margin-top: 5px;"><i>> Neighbor-Driven Centrality PC vs. School Performance</i></h3>
+
+    <h4 class = "hidden" style="margin-top: 15px; margin-bottom: 15px;">
+        <div style="display: flex; justify-content: center;">
+            <img src="C:\Users\Kathy Xu\Downloads\neighbor_driven.png" width="450" style="border: 1px solid #3d3d3d;">
+                    </div>
+    </h4>
+
+    <h3 class = "expandable" style = "margin-top: 5px;"><i>> Distance-Driven Centrality PC vs. School Performance</i></h3>
+    <h4 class = "hidden" style="margin-top: 15px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: center;">
+            <img src="C:\Users\Kathy Xu\Downloads\distance_driven.png" width="400" style="border: 1px solid #3d3d3d;">
+                    </div>
+    </h4>
+    
+    <h2 style = "margin-top: 15px; margin-bottom:15px">We then categorized each school cluster based on its location on the centrality-performance axes.
+        Curious about the driving performance metrics within each cluster, we ran PCA on the original school data and obtained the following results:</h2>
+
+        <div id="loading-table">
+            <div class="table-container">
+            <table style="justify-items: center">
+                <tr>
+                    <th>PC</th>
+                    <th>Cluster</th>
+                    <th>Centrality</th>
+                    <th>Performance</th>
+                    <th>Dominant Performance Metric</th>
+                </tr>
+                <tr>
+                    <td>Neighbor-driven</td>
+                    <td>1</td>
+                    <td>High</td>
+                    <td>Med</td>
+                    <td>Rigorous Instruction</td>
+                </tr>
+                <tr>
+                    <td>Neighbor-driven</td>
+                    <td>2</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Strong Family-Community Ties</td>
+                </tr>
+                <tr>
+                    <td>Neighbor-driven</td>
+                    <td>3</td>
+                    <td>Low</td>
+                    <td>High</td>
+                    <td>Student Achievement</td>
+                </tr>
+            </table>
+            </div>
+            <div class="table-container", style="margin-top:15px";>
+   <table>
+                    <tr>
+                    <th>PC</th>
+                    <th>Cluster</th>
+                    <th>Centrality</th>
+                    <th>Performance</th>
+                    <th>Dominant Performance Metric</th>
+                </tr>
+                <tr>
+                    <td>Distance-driven</td>
+                    <td>1</td>
+                    <td>High</td>
+                    <td>Med</td>
+                    <td>Rigorous Instruction, Student Achievement</td>
+                </tr>
+                <tr>
+                    <td>Distance-driven</td>
+                    <td>2</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Strong Family-Communities Ties</td>
+                </tr>
+                <tr>
+                    <td>Distance-driven</td>
+                    <td>3</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Strong Family-Community Ties</td>
+                </tr></table>
+    </div>
+    </div>
+</div>
+
+<h3><br><br><br></h3>
+
+            <script>
+                // Get all expandable elements
+                var expandableElements = document.querySelectorAll('.expandable');
+        
+                expandableElements.forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        // Get the next sibling element
+                        var hiddenElement = this.nextElementSibling;
+        
+                        // Toggle display
+                        if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                            hiddenElement.style.display = 'block';
+                        } else {
+                            hiddenElement.style.display = 'none';
+                        }
+                    });
+                });
+            </script>
+
+<script>
+    // Get all expandable elements
+    var expandableElements = document.querySelectorAll('.expandable');
+
+    expandableElements.forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Get the table or next sibling element
+            var hiddenElement = document.getElementById('loading-table');
+
+            // Toggle display
+            if (hiddenElement.style.display === 'none' || hiddenElement.style.display === '') {
+                hiddenElement.style.display = 'block';
+            } else {
+                hiddenElement.style.display = 'none';
+            }
+        });
+    });
+    
+    <footer>
+  HTML site by Kathy Xu, 2024
+</footer>
+
+</script>
+        </html>
